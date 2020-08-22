@@ -1,0 +1,5 @@
+---
+
+# list of packages to install for kernel update
+update_kernel:
+  - "linux-image-{{ pkg_version_linux_image }}"

@@ -1,0 +1,14 @@
+---
+- name: Resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      ignore_errors: true
+      paths:
+        - '{{ role_path }}/vars'
+
+- include_tasks: update-kernel.yml
+  when: ansible_os_family == 'Debian'

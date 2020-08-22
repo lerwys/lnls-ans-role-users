@@ -2,6 +2,8 @@
 - import_role:
     name: lnls-ans-role-repositories
 - import_role:
+    name: lnls-ans-role-update-kernel
+- import_role:
     name: lnls-ans-role-users
   when: global_repositories_role | default(true) | bool
 - import_role:

@@ -41,6 +41,7 @@ pkg_version_sirius_epics_screens: master
 
 # === apt packages versions ===
 
+pkg_version_linux_image: 4.19.0-0.bpo.6-amd64
 pkg_version_network_manager: 1.14.6*
 pkg_version_python_dbus: 1.2.4*
 pkg_version_python3_dbus: 1.2.4*
