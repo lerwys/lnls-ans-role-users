@@ -3,6 +3,7 @@ __sirius_apps_hla_packages:
   - edm-dev
   - xpra
   - xvfb
+  - gnome-terminal
 
 __sirius_apps_hla_pip_packages:
   - QtAwesome

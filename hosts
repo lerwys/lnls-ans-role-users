@@ -17,6 +17,8 @@ lnls209-linux  # fac-desktop
 
 [con]
 10.0.38.84  # cons-dev-vm
+#fac-testes.abtlus.org.br
+#fac-testes-la.abtlus.org.br
 
 [fac]
 lnls560-linux  # fac-analuisa

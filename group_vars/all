@@ -124,6 +124,7 @@ pkg_version_openjdk_8_jre: 8u222-b10*
 pkg_version_xcursor_themes: 1.0.4*
 pkg_version_epics_extensions_dev: 20130514.5*
 pkg_version_edm_dev: 1.12.105B*
+pkg_version_gnome_terminal: 3.22.2*
 pkg_version_xpra: 0.17.6*
 pkg_version_winswitch: 0.12.21*
 pkg_version_xvfb: 2:1.19.2*
@@ -198,6 +199,8 @@ nfs_clients_servers_subnet: 10.128.255.0/24
 nfs_clients_cons_subnet: 10.128.124.0/24
 nfs_clients_control_room_subnet: 10.128.254.0/24
 nfs_clients_cnpem_sirius_subnet: 10.0.38.0/24
+nfs_clients_cons2_subnet: 10.128.10.0/24
+
 
 fac_workstation_ip: 10.0.7.55
 
@@ -222,23 +225,28 @@ nfsserver_exports:
   - |
     /home/con-srv/cons-opis                       {{ nfs_clients_servers_subnet }}(rw,sync,all_squash,anonuid=1002,anongid=1002)\
                                                   {{ nfs_clients_cons_subnet }}(rw,sync,all_squash,anonuid=1002,anongid=1002)\
+                                                  {{ nfs_clients_cons2_subnet }}(rw,sync,all_squash,anonuid=1002,anongid=1002)\
                                                   {{ nfs_clients_control_room_subnet }}(rw,sync,all_squash,anonuid=1002,anongid=1002)\
                                                   *(ro,sync,root_squash)
   - |
     /home/nfs-shared/repos-lnls-sirius  {{ nfs_clients_control_room_subnet }}(ro,sync,no_subtree_check,no_root_squash,insecure)\
                                         {{ nfs_clients_servers_subnet }}(ro,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)\
+                                        {{ nfs_clients_cons2_subnet }}(ro,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)\
                                         {{ nfs_clients_cnpem_sirius_subnet }}(ro,sync,no_subtree_check,no_root_squash,insecure)
   - |
     /home/nfs-shared/lost-and-found     {{ nfs_clients_control_room_subnet }}(rw,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)\
-                                        {{ nfs_clients_cnpem_sirius_subnet }}(rw,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)
+                                        {{ nfs_clients_cnpem_sirius_subnet }}(rw,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001) \
+                                        {{ nfs_clients_cons2_subnet }}(rw,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)
   - |
     /home/nfs-shared/screens-iocs       {{ nfs_clients_control_room_subnet }}(rw,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)\
+                                        {{ nfs_clients_cons2_subnet }}(rw,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)\
                                         {{ nfs_clients_cnpem_sirius_subnet }}(rw,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)
   - |
     /home/nfs-shared/backups            {{ fac_workstation_ip }}(rw,sync,no_subtree_check,no_root_squash,insecure)
   - |
     {{ nfsserver_sirius_epics_screens }}        {{ nfs_clients_control_room_subnet }}(ro,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)\
                                                 {{ nfs_clients_cnpem_sirius_subnet }}(ro,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)\
+                                                {{ nfs_clients_cons2_subnet }}(ro,sync,no_subtree_check,all_squash,insecure,anonuid=1001,anongid=1001)\
                                                 *(ro,sync,no_subtree_check,all_squash,insecure)
 
 # NFS autofs client server list of directories. The "|" operator will leave the string as is chomp the text back into

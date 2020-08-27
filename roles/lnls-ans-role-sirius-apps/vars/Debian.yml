@@ -1,19 +1,15 @@
 ---
 __sirius_apps_packages:
   - epics-extensions-dev
-  - edm-dev
-  - xpra
   - winswitch
   - xvfb
   - bc
   - libgsl2
-  - libgsl-dev
   - libblas-dev
   - liblapack-dev
   - libgsl-dev
 
 __sirius_apps_pip_packages:
-  - QtAwesome
   - pyvisa
   - pyvisa-py
 

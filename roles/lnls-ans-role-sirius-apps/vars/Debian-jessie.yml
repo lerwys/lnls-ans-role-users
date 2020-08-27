@@ -1,5 +1,5 @@
 ---
-__sirius_apps_epics_packages:
+__sirius_apps_packages:
   - "epics-extensions-dev={{ pkg_version_epics_extensions_dev }}"
   - "winswitch={{ pkg_version_winswitch }}"
   - "bc={{ pkg_version_bc }}"
@@ -8,7 +8,7 @@ __sirius_apps_epics_packages:
   - "liblapack-dev={{ pkg_version_liblapack_dev }}"
   - "libgsl-dev={{ pkg_version_libgsl_dev }}"
 
-__sirius_apps_epics_pip_packages:
+__sirius_apps_pip_packages:
   - "pyvisa=={{ pkg_version_pyvisa }}"
   - "pyvisa-py=={{ pkg_version_pyvisa_py }}"
 
