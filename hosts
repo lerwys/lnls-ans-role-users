@@ -169,7 +169,7 @@ ioc_ps_srv
 # 	FBP: 
 # 	OTH:
 # 	GEN: as_pu_conv, si_ps_diags
-# fac-testes@abtlus.org.br:
+# fac-testes-LA@abtlus.org.br:
 # 	FBP: tb_ps_quad, tb_ps_corrs, ts_ps_corrs
 # 	OTH: ts_ps_fams, tb_ps_dips,
 # 	GEN: ts_ps_diags, tb_ps_diags
