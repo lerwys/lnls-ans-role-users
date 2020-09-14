@@ -6,17 +6,12 @@
     role_to_run: lnls-ans-role-ctrl-service
 
     services_to_run_fams:
-      # - sirius-ioc-bo-ps-dipole-1.service
-      # - sirius-ioc-bo-ps-dipole-2.service
-      - sirius-ioc-bo-ps-quadrupole-qd.service
-      # - sirius-ioc-bo-ps-quadrupole-qf.service
-      - sirius-ioc-bo-ps-sextupole-sf.service
-      - sirius-ioc-bo-ps-sextupole-sd.service
-
-    services_to_run_fams2:
       - sirius-ioc-bo-ps-dipole-1.service
       - sirius-ioc-bo-ps-dipole-2.service
+      - sirius-ioc-bo-ps-quadrupole-qd.service
       - sirius-ioc-bo-ps-quadrupole-qf.service
+      - sirius-ioc-bo-ps-sextupole-sf.service
+      - sirius-ioc-bo-ps-sextupole-sd.service
 
     services_to_run_corrs:
       - sirius-ioc-bo-ps-correctors-ia01
@@ -48,17 +43,6 @@
       when:
         - ansible_host == ioc_bo_ps_fams_srv_host
         - services_to_run_fams is defined and services_to_run_fams | length > 0
-
-    - name: "Run {{ role_to_run }} role for BO fams2"
-      include_role:
-        name: "{{ role_to_run }}"
-      vars:
-        ctrl_service_name: "'{{ item }}'"
-      with_items:
-        - "{{ services_to_run_fams2 }}"
-      when:
-        - ansible_host == ioc_bo_ps_fams2_srv_host
-        - services_to_run_fams2 is defined and services_to_run_fams2 | length > 0
 
     - name: "Run {{ role_to_run }} role for BO corrs"
       include_role:
