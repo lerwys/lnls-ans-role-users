@@ -16,8 +16,14 @@ lnls209-linux  # fac-desktop
 10.0.38.56  # elp1-linux
 
 [con]
+<<<<<<< Updated upstream
 10.0.38.84  # cons-dev-vm
 #fac-testes.abtlus.org.br
+=======
+#10.0.38.84  # cons-dev-vm
+fac-testes.abtlus.org.br
+10.0.38.81  # fac-testes-debian10.abtlus.org.br
+>>>>>>> Stashed changes
 #fac-testes-la.abtlus.org.br
 
 [fac]
