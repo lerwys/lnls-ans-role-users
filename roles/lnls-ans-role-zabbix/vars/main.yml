@@ -2,10 +2,14 @@
 zabbix_server_ips:
   - 10.128.255.3
   - 10.128.255.4
-
+  - LA-RaCtrl-CO-Srv-1.abtlus.org.br
+  - CA-RaCtrl-CO-Srv-1.abtlus.org.br
+ 
 zabbix_server_active_ips:
   - 10.128.255.3
   - 10.128.255.4
+  - LA-RaCtrl-CO-Srv-1.abtlus.org.br
+  - CA-RaCtrl-CO-Srv-1.abtlus.org.br
 
 zabbix_config_file_preferences:
   - path: /etc/zabbix/zabbix_agentd.conf
