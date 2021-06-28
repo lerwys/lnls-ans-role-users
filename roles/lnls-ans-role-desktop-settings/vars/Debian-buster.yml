@@ -9,5 +9,5 @@ __desktop_settings_packages:
 __desktop_settings_pip_packages:
   - "psutil{{ (pkg_version_psutil | length > 0) | ternary('==' + pkg_version_psutil, '') }}"
   - "ansible{{ (pkg_version_ansible | length > 0) | ternary('==' + pkg_version_ansible, '') }}"
-  
+
 __pip_executable: pip-sirius

@@ -12,4 +12,3 @@ roles:
     version: 2.0.0
   - name: geerlingguy.repo-epel
     version: 3.0.0
-

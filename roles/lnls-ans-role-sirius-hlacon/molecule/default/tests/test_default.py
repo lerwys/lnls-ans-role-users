@@ -12,12 +12,11 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 CONDA_ACTIVATE_SCRIPT = "/opt/conda/etc/profile.d/conda.sh"
 CONDA_ENV_CONS_PATH = "/opt/conda/envs/cons"
 
+
 # @pytest.mark.parametrize('', [
 # ])
 def test_conda_cons_environment(host):
     cmd = host.run(
-        "source {} && conda env list|grep cons|awk '{ printf $1 '}".format(
-            CONDA_ACTIVATE_SCRIPT
-        )
+        f"source {CONDA_ACTIVATE_SCRIPT} && conda env list|grep cons|awk '{{ printf $1 '}}"
     )
     assert CONDA_ENV_CONS_PATH in cmd.stdout

@@ -31,4 +31,3 @@
       vars:
         clone_install_repos: "{{ lookup('vars', 'clone_install_repos_sirius_screens', default=[]) }}"
       when: glusterfs_main_server == ansible_host
-

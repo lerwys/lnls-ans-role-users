@@ -6,4 +6,5 @@ skip_list:
   - unnamed-task
 
 warn_list:
+  - ignore-errors
   - internal-error

@@ -1,0 +1,41 @@
+repos:
+  - repo: https://github.com/PyCQA/doc8
+    rev: 0.8.1
+    hooks:
+      - id: doc8
+        name: doc8
+        description: This hook runs doc8 for linting docs
+        entry: python -m doc8
+        language: python
+        files: \.rst$
+        require_serial: true
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: check-byte-order-marker
+      - id: check-json
+      - id: check-symlinks
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+
+  - repo: https://github.com/psf/black
+    rev: 21.5b0
+    hooks:
+      - id: black
+        language_version: python3
+        args: ["--config", ".black"]
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.4
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          - flake8-absolute-import
+          - flake8-black
+
+  - repo: https://github.com/ansible-community/ansible-lint.git
+    rev: v5.0.8
+    hooks:
+      - id: ansible-lint
+        files: \.(yaml|yml)$

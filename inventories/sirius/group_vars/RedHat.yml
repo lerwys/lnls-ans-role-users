@@ -1,4 +1,3 @@
 # === Docker ===
 docker_version: "3:19.03.14-3.el7"
 docker_package: "{{ docker_package_base  }}-{{ docker_version  }}"
-
